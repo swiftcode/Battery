@@ -10,9 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    func batteryLevel() {
+        
+        let level: Int = Int(UIDevice.currentDevice().batteryLevel * 100)
+        let ret = String(level)
+        say("Your battery level is \(ret) percent")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        UIDevice.currentDevice().batteryMonitoringEnabled = true
+        batteryLevel()
+        
+        UIApplication.sharedApplication().performSelector("suspend")
     }
 
     override func didReceiveMemoryWarning() {

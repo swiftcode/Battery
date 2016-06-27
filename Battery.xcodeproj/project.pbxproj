@@ -13,6 +13,7 @@
 		E563B9C71D2163F30027C597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E563B9C61D2163F30027C597 /* Assets.xcassets */; };
 		E563B9CA1D2163F30027C597 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E563B9C81D2163F30027C597 /* LaunchScreen.storyboard */; };
 		E563B9D51D2163F30027C597 /* BatteryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E563B9D41D2163F30027C597 /* BatteryUITests.swift */; };
+		E563B9E01D2164B00027C597 /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = E563B9DF1D2164B00027C597 /* Say.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		E563B9D01D2163F30027C597 /* BatteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E563B9D41D2163F30027C597 /* BatteryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryUITests.swift; sourceTree = "<group>"; };
 		E563B9D61D2163F30027C597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E563B9DF1D2164B00027C597 /* Say.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Say.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		E563B9BE1D2163F30027C597 /* Battery */ = {
 			isa = PBXGroup;
 			children = (
+				E563B9DF1D2164B00027C597 /* Say.swift */,
 				E563B9BF1D2163F30027C597 /* AppDelegate.swift */,
 				E563B9C11D2163F30027C597 /* ViewController.swift */,
 				E563B9C31D2163F30027C597 /* Main.storyboard */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E563B9E01D2164B00027C597 /* Say.swift in Sources */,
 				E563B9C21D2163F30027C597 /* ViewController.swift in Sources */,
 				E563B9C01D2163F30027C597 /* AppDelegate.swift in Sources */,
 			);
