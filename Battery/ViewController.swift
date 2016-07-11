@@ -17,13 +17,23 @@ class ViewController: UIViewController {
         say("Your battery level is \(ret) percent")
     }
     
+    func isConnected() {
+        if (UIDevice.currentDevice().batteryState != .Unplugged) {
+            say("Device is connected")
+        } else {
+            say("Device is disconnected")
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIDevice.currentDevice().batteryMonitoringEnabled = true
+        //isConnected()
         batteryLevel()
         
-        UIApplication.sharedApplication().performSelector("suspend")
+        //UIApplication.sharedApplication().performSelector("suspend")
     }
 
     override func didReceiveMemoryWarning() {
