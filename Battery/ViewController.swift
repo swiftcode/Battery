@@ -26,6 +26,9 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func batteryButtonPressed(sender: AnyObject) {
+        batteryLevel()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
