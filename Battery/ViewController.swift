@@ -10,20 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    func batteryLevel() {
-        
-        let level: Int = Int(UIDevice.currentDevice().batteryLevel * 100)
-        let ret = String(level)
-        say("Your battery level is \(ret) percent")
+    func isConnected() -> Bool {
+        return UIDevice.currentDevice().batteryState != .Unplugged
     }
     
-    func isConnected() {
-        if (UIDevice.currentDevice().batteryState != .Unplugged) {
-            say("Device is connected")
-        } else {
-            say("Device is disconnected")
-        }
-        
+    func batteryLevel() {
+        let level: Int = Int(UIDevice.currentDevice().batteryLevel * 100)
+        let direction: String = isConnected() ? "rising" : "falling"
+        let ret = String(level)
+        say("Your battery level is \(ret) percent and \(direction)")
     }
     
     @IBAction func batteryButtonPressed(sender: AnyObject) {
@@ -33,7 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         UIDevice.currentDevice().batteryMonitoringEnabled = true
-        //isConnected()
+        
         batteryLevel()
         
         //UIApplication.sharedApplication().performSelector("suspend")
