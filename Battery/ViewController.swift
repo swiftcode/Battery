@@ -16,9 +16,20 @@ class ViewController: UIViewController {
     
     func batteryLevel() {
         let level: Int = Int(UIDevice.currentDevice().batteryLevel * 100)
-        let direction: String = isConnected() ? "rising" : "falling"
+        var direction: String = ""
+        
+        if isConnected() {
+            if level == 100 {
+                direction = ""
+            } else {
+                direction = "and rising"
+            }
+        } else {
+            direction = "and falling"
+        }
+
         let ret = String(level)
-        say("Your battery level is \(ret) percent and \(direction)")
+        say("Your battery level is \(ret) percent \(direction)")
     }
     
     @IBAction func batteryButtonPressed(sender: AnyObject) {
