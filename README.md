@@ -1,4 +1,6 @@
 # Battery
-A simple, no-frills app that merely recites the battery's current level.  There's no interface and it suspends itself automatically.  
+A simple app that merely recites the battery's current level.  There's no interface.   
 
-Made specifically to launch via Siri (especially when outdoor and cannot see the screen because of the Sun).  Long press on the home button then say, "Battery".  
+Made a mod that indicates if it's plugged into power.  If it's not connected, it indicates that the batter level is falling, if it is connected, it indicates that the level is rising, unless it's at 100%.
+
+
