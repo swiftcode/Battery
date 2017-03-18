@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    func isConnected() -> Bool {
+    var isConnected: Bool {
         return UIDevice.current.batteryState != .unplugged
     }
     
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let level: Int = Int(UIDevice.current.batteryLevel * 100)
         var direction: String = ""
         
-        if isConnected() {
+        if isConnected {
             if level == 100 {
                 direction = ""
             } else {
@@ -41,13 +41,10 @@ class ViewController: UIViewController {
         UIDevice.current.isBatteryMonitoringEnabled = true
         
         batteryLevel()
-        
-        //UIApplication.sharedApplication().performSelector("suspend")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
