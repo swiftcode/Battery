@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-func say(textToSay: String?) {
+func say(_ textToSay: String?) {
     let synth = AVSpeechSynthesizer()
     var avSpeech = AVSpeechUtterance(string: "")
     
@@ -18,6 +18,6 @@ func say(textToSay: String?) {
     
     avSpeech = AVSpeechUtterance(string: textToSay)
     avSpeech.rate = 0.52
-    synth.speakUtterance(avSpeech)
+    synth.speak(avSpeech)
 }
 

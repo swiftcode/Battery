@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     func isConnected() -> Bool {
-        return UIDevice.currentDevice().batteryState != .Unplugged
+        return UIDevice.current.batteryState != .unplugged
     }
     
     func batteryLevel() {
-        let level: Int = Int(UIDevice.currentDevice().batteryLevel * 100)
+        let level: Int = Int(UIDevice.current.batteryLevel * 100)
         var direction: String = ""
         
         if isConnected() {
@@ -32,13 +32,13 @@ class ViewController: UIViewController {
         say("Your battery level is \(ret) percent \(direction)")
     }
     
-    @IBAction func batteryButtonPressed(sender: AnyObject) {
+    @IBAction func batteryButtonPressed(_ sender: AnyObject) {
         batteryLevel()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIDevice.currentDevice().batteryMonitoringEnabled = true
+        UIDevice.current.isBatteryMonitoringEnabled = true
         
         batteryLevel()
         
