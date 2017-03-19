@@ -8,28 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+enum Direction: String {
+    case rising  = "and rising"
+    case falling = "and falling"
+    case full    = ""
+    
+    init() {
+        self = .falling  //the most likely scenario
+    }
+}
 
-    var isConnected: Bool {
+class ViewController: UIViewController {
+    var connected: Bool {
         return UIDevice.current.batteryState != .unplugged
     }
     
     func batteryLevel() {
         let level: Int = Int(UIDevice.current.batteryLevel * 100)
-        var direction: String = ""
+        var direction = Direction()
         
-        if isConnected {
-            if level == 100 {
-                direction = ""
-            } else {
-                direction = "and rising"
-            }
+        if connected {
+            direction = level == 100 ? .full : .rising
         } else {
-            direction = "and falling"
+            direction = .falling
         }
 
         let ret = String(level)
-        say("Your battery level is \(ret) percent \(direction)")
+        say("Your battery level is \(ret) percent \(direction.rawValue)")
     }
     
     @IBAction func batteryButtonPressed(_ sender: AnyObject) {
