@@ -33,8 +33,7 @@ class ViewController: UIViewController {
             direction = .falling
         }
 
-        let ret = String(level)
-        say("Your battery level is \(ret) percent \(direction.rawValue)")
+        say("Your battery level is \(String(level)) percent \(direction.rawValue)")
     }
     
     @IBAction func batteryButtonPressed(_ sender: AnyObject) {
