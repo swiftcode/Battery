@@ -9,12 +9,12 @@
 import UIKit
 
 enum Direction: String {
-    case rising  = "and rising"
-    case falling = "and falling"
+    case charging  = "and charging"
+    case draining = "and draining"
     case full    = ""
     
     init() {
-        self = .falling  //the most likely scenario
+        self = .draining  //the most likely scenario
     }
 }
 
@@ -28,9 +28,9 @@ class ViewController: UIViewController {
         var direction = Direction()
         
         if connected {
-            direction = level == 100 ? .full : .rising
+            direction = level == 100 ? .full : .charging
         } else {
-            direction = .falling
+            direction = .draining
         }
 
         say("Your battery level is \(String(level)) percent \(direction.rawValue)")
