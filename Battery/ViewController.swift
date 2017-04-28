@@ -11,7 +11,7 @@ import UIKit
 enum Direction: String {
     case charging  = "and charging"
     case draining = "and draining"
-    case full    = ""
+    case full = ""
     
     init() {
         self = .draining  //the most likely scenario
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         return UIDevice.current.batteryState != .unplugged
     }
     
-    func batteryLevel() {
+    var batteryLevel: String {
         let level: Int = Int(UIDevice.current.batteryLevel * 100)
         var direction = Direction()
         
@@ -32,19 +32,18 @@ class ViewController: UIViewController {
         } else {
             direction = .draining
         }
-
-        say("Your battery level is \(String(level)) percent \(direction.rawValue)")
+        
+        return "Your battery level is \(String(level)) percent \(direction.rawValue)"
     }
     
     @IBAction func batteryButtonPressed(_ sender: AnyObject) {
-        batteryLevel()
+        say(batteryLevel)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIDevice.current.isBatteryMonitoringEnabled = true
-        
-        batteryLevel()
     }
 
     override func didReceiveMemoryWarning() {
