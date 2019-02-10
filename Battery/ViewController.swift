@@ -36,14 +36,14 @@ class ViewController: UIViewController {
         return "Your battery level is \(String(level)) percent \(direction.rawValue)"
     }
     
-    @IBAction func batteryButtonPressed(_ sender: AnyObject) {
+    override func viewWillAppear(_ animated: Bool) {
+        UIDevice.current.isBatteryMonitoringEnabled = true
         say(batteryLevel)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        UIDevice.current.isBatteryMonitoringEnabled = true
+        say(batteryLevel)
     }
 
     override func didReceiveMemoryWarning() {
