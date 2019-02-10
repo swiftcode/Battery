@@ -8,13 +8,9 @@
 
 import AVFoundation
 
-func say(_ textToSay: String?) {
+func say(textToSay: String) {
     let synth = AVSpeechSynthesizer()
     var avSpeech = AVSpeechUtterance(string: "")
-    
-    guard let textToSay = textToSay else {
-        return
-    }
     
     avSpeech = AVSpeechUtterance(string: textToSay)
     avSpeech.rate = 0.52

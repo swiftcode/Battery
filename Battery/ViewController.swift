@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     }
     
     var batteryLevel: String {
+        UIDevice.current.isBatteryMonitoringEnabled = true
         let level: Int = Int(UIDevice.current.batteryLevel * 100)
         var direction = Direction()
         
@@ -36,20 +37,17 @@ class ViewController: UIViewController {
         return "Your battery level is \(String(level)) percent \(direction.rawValue)"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        UIDevice.current.isBatteryMonitoringEnabled = true
-        say(batteryLevel)
+    override func viewDidAppear(_ animated: Bool) {
+        say(textToSay: batteryLevel)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        say(batteryLevel)
+        say(textToSay: batteryLevel)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    @IBAction func batteryButtonPressed(_ sender: AnyObject) {
+        say(textToSay: batteryLevel)
     }
-
-
 }
 
