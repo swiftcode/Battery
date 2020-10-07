@@ -52,7 +52,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        say(textToSay: batteryLevel)
     }
     
     @IBOutlet weak var batteryButton: UIButton!
